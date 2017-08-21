@@ -1,0 +1,88 @@
+// ==========================================================================
+// Global variables
+// ==========================================================================
+
+// Font-stacks
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900';
+$font-family--primary    : 'Lato', Helvetica, Arial, sans-serif;
+
+// Font Weights
+
+$font-weight--light     : 300;
+$font-weight--regular   : 400;
+$font-weight--bold      : 700;
+
+// Text
+
+$base__font-size : 16px;
+$base__line      : 24px;
+$letter-space    : 1px;
+
+//Colors
+
+// Descriptive color variables
+$white          : #fff;
+$black          : #000;
+$tundora        : #444;
+$turquoise      : #50E3C2;
+$malibu         : #47DEFF;
+
+$de-york          : #78C58F;
+$vivid-tangerine  : #FF9C7E;
+$pink-salmon      : #FF8F93;
+$mauve            : #BD9CFF;
+
+//Grids
+$mantis              : #7FD079;
+$chetwood-blue       : #838EDC;
+$harvest-gold        : #E0B47C;
+$lavender            : #CE86E9;
+$granny-smith-apple  : #9DE997;
+$copperfield         : #D9856D;
+$neptune             : #78C0AB;
+
+$button-colors: (
+        default : $malibu,
+        success : $de-york,
+        error   : $pink-salmon,
+        warning : $vivid-tangerine,
+        info    : $mauve,
+);
+$grid-colors: (
+        col--3    : $lavender,
+        col--4    : $harvest-gold,
+        col--5    : $granny-smith-apple,
+        col--6    : $chetwood-blue,
+        col--7    : $copperfield,
+        col--8    : $neptune,
+        col--12   : $mantis
+);
+
+// Functional color variables
+
+$color-prim         : $tundora ;
+$color-sec          : $turquoise;
+
+$color-link-default : $malibu;
+
+//Grid columns
+
+$g-col-basis    : 8.333;
+$g-gutter-width : 20px;
+$g-col-count    : 12;
+$g-cont-max-w   : 1050px;
+
+
+// Border radius
+
+$br--default    : 0.4em;
+
+// Transitions
+
+$trns-duration  : .3s;
+
+//Path
+$path--rel          : "../images";
+
+//Breakpoints
+$brkpoint-md    : 768px;

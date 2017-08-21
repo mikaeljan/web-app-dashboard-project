@@ -1,0 +1,17 @@
+// ==========================================================================
+// Extends
+// ==========================================================================
+%link {
+  color: $color-link-default;
+  text-decoration: none;
+}
+
+%flexbox-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flexbox-column {
+  display: flex;
+  flex-direction: column;
+}

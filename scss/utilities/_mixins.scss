@@ -1,0 +1,109 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+// Media queries
+@mixin mq($break) {
+  @if $break == "mobile" {
+    @media (max-width: $brkpoint-md) {
+      @content;
+    }
+  }
+  @else if $break == "desktop" {
+    @media (min-width: $brkpoint-md+1) {
+      @content;
+    }
+  }
+  @else {
+    @error "Whoops! No value could be retrieved for `#{$break}`. "
+  }
+}
+
+// Element and Modifier BEM Selectors
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Flexbox settings
+
+// Flexbox display
+@mixin flexbox() {
+  display: flex;
+}
+// Flex Flow Direction
+// - applies to: flex containers
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+// Axis Alignment
+// - applies to: flex containers
+@mixin justify-content($justify) {
+  justify-content: $justify;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+@mixin align-items($align) {
+
+  align-items: $align;
+}
+// Cross-axis Alignment
+// - applies to: flex items
+@mixin align-self($align) {
+
+  align-self: $align;
+}
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  flex-grow: $grow;
+}
+// Flex basis
+// - the initial main size of the flex item
+@mixin flex-basis($width: $g-col-basis) {
+  flex-basis: $width;
+}
+
+// Grid Cols
+
+@mixin g-width {
+  @for $i from 1 through $g-col-count {
+    &--#{$i}{
+
+      flex-basis:percentage(($g-col-basis * $i)/100);
+      //flex-basis: $g-col-basis;
+      //@include flex-grow(#{$i});
+    }
+  }
+}
+
+// Generate modifier color classes
+@mixin grid-colors($map) {
+  @each $theme, $color in $map {
+    &.grid__#{$theme} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin button-colors($map) {
+  @each $theme, $color in $map {
+    &.btn--#{$theme} {
+      background-color: $color;
+    }
+  }
+}
+
