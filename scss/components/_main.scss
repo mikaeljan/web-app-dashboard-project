@@ -1,0 +1,52 @@
+// ======================================
+//  Main
+// ======================================
+.container {
+  @include mq("tablet") {
+    @include flexbox;
+    align-items: stretch;
+    //@include flex-direction(row);
+  }
+}
+.wrapper {
+  @include flexbox;
+  @include flex-direction(column);
+  justify-content: center;
+  align-items:center;
+  width: 85%;
+  margin: auto;
+  @include mq("tablet") {
+    @include flex-direction(row);
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+.full {
+  width: 100%;
+}
+.half {
+  width: 100%;
+  @include mq("tablet"){
+    width: 50%;
+  }
+}
+// Alert
+.alert {
+  @include flexbox;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+  background-color: salmon;
+  border-radius: $br--default;
+  color: $white;
+}
+.alert-text {
+  display: inline-block;
+  margin-left: em(5px);
+}
+.alert-close {
+  font-size: em(30px);
+  margin: auto em(5px);
+}

@@ -1,0 +1,63 @@
+// ======================================
+//  Navigations
+// ======================================
+.nav-main,
+.nav-side {
+  text-align: center;
+}
+// Header navigations
+.header-title {
+  margin: em(10px);
+}
+.nav-main {
+  @include flexbox;
+  @include flex-direction(row);
+  align-items: center;
+}
+
+.nav-main .nav__list--item:nth-child(1) {
+  @include mq("tablet") {
+    border-right: 1px solid black;
+  }
+}
+// Side navigations
+.nav-side {
+  background-color: $mulled-wine;
+  @include mq("tablet") {
+    @include flex-direction(column);
+    justify-content: flex-start;
+  }
+  @include e("list") {
+    @include flexbox;
+    align-items: stretch;
+    justify-content: space-between;
+    @include mq("tablet") {
+      @include flex-direction(column);
+      padding:0;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.nav__list--item {
+  flex-grow: 1;
+  padding:em(10px) em(15px);
+  @include mq("tablet") {
+    @include flex-direction(column);
+    justify-content: flex-start;
+  }
+}
+.active {
+  background-color: $button-colors-active;
+}
+.nav__list--item a {
+  display:block;
+  padding: em(5px)
+}
+
+.tab {
+  @include flexbox;
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+}

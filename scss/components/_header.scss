@@ -1,0 +1,27 @@
+// ======================================
+//  Header
+// ======================================
+
+.header-main {
+  border:1px black solid;
+  text-align: center;
+  background-color: $ship-cove-light;
+  @include mq("tablet") {
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+  }
+};
+.header-main h1 {
+  color: $white;
+}
+
+.header-main a {
+  color: $white;
+  text-decoration: none;
+}
+.profile-name {
+  padding: em(10px);
+  margin-left: em(5px);
+}
+

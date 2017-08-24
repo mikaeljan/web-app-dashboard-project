@@ -5,13 +5,21 @@
   color: $color-link-default;
   text-decoration: none;
 }
-
-%flexbox-row {
-  display: flex;
-  flex-direction: row;
-}
-
-%flexbox-column {
-  display: flex;
-  flex-direction: column;
+// Buttons
+%btn {
+  //display: inline-block;
+  padding: 15px 30px;
+  margin: em(10px) 0;
+  border: 0;
+  border-radius : $br--default;
+  color: $white;
+  font-size : em(14px);
+  font-weight: $font-weight--regular;
+  transition: opacity $trns-duration;
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
 }

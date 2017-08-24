@@ -12,32 +12,150 @@
 </head>
     <body>
         <header class="header-main">
-            <h2 class="header-title">MyApp</h2>
-            <nav class="nav-main">
+            <h1 class="header-title">MyApp</h1>
+            <nav>
                 <ul class="nav-main">
-                   <li><a href="#"><img src="" class="icon-notification"/> </a></li>
-                   <li><a href="#"><img src="" class="icon-logo"/>Michal Janek</a></li>
+                   <li class="nav__list--item">
+                       <a href="#">
+                           <img src="icons/icon-bell.svg" class="icon icon-notification"/>
+                       </a>
+                   </li>
+                   <li class="nav__list--item">
+                       <a href="#">
+                           <img src="icons/gary.jpg" class="icon icon-logo"/>
+                           <span class="profile-name">Michal Janek</span>
+                       </a>
+                   </li>
                 </ul>
             </nav>
 
         </header>
-        <aside>
+        <div class="container">
+
+        <!--<aside>-->
             <nav class="nav-side">
-                <ul>
-                    <li></li>
-                    <li></li>
+                <ul class="nav-side__list">
+                    <li class="nav__list--item active"><a href="#"><img class="icon icon-side active" src="icons/icon-settings.svg"/></a></li>
+                    <li class="nav__list--item"><a href="#"><img class="icon icon-side" src="icons/icon-members.svg"/></a></li>
+                    <li class="nav__list--item"><a href="#"><img class="icon icon-side" src="icons/icon-visits.svg"/></a></li>
+                    <li class="nav__list--item"><a href="#"><img class="icon icon-side" src="icons/icon-dashboard.svg"/></a></li>
                 </ul>
             </nav>
+        <!--</aside>-->
+            <main class="wrapper">
 
-            <main>
-                <section>
-                    <canvas id="myChart"></canvas>
-                </section>
-            </main>
-    </aside>
+                    <div class="tab full">
+                        <h3 class="main-title">Dashboard</h3>
+                            <form class="">
+                                <input type="search" placeholder="Search ..."/>
+                            </form>
+                    </div>
+                    <section class="alert">
+                        <p class="alert-text">
+                            <strong>Alert </strong>
+                            <span>
+                                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                            </span>
+                        </p>
+                        <span class='alert-close' onclick='this.parentNode.removeChild(this.parentNode); return false;'>x</span>
+                    </section>
+
+                    <div class="chart-line full">
+                        <canvas id="myWidget1"></canvas>
+                    </div> <!-- /chart-line -->
+
+                    <div class="chart-bar half">
+                        <canvas id="myWidget2"></canvas>
+                    </div> <!-- /chart-bar -->
+
+                    <div class="chart-donut half">
+                        <canvas id="myWidget3"></canvas>
+                    </div> <!-- /chart-donut -->
+
+                    <div class="widget-message half">
+                        <div id="myWidget7">
+                            <h3>Message User headline</h3>
+                            <form class="">
+                                <fieldset>
+                                    <input type="search" placeholder=""/>
+                                    <textarea> </textarea>
+                                    <button class="btn btn--yes" type="submit">SEND</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div> <!-- /widget-message -->
+
+                    <div class="widget-settings half">
+                        <div id="myWidget8">
+                            <h3>Settings headline</h3>
+                            <form class="">
+                                <fieldset>
+                                    <div class="switch-row">
+                                        <label>Send Email Notifications </label>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="switch-row">
+                                        <label>Switch Profile to Public</label>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                    <select class="timezone">
+                                        <option value="" disable="" selected="">Select Timezone</option>
+                                        <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
+                                        <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
+                                        <option value="-10.0">(GMT -10:00) Hawaii</option>
+                                        <option value="-9.0">(GMT -9:00) Alaska</option>
+                                        <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                                        <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                                        <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                                        <option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                                        <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+                                        <option value="-3.5">(GMT -3:30) Newfoundland</option>
+                                        <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                                        <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
+                                        <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+                                        <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+                                        <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+                                        <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+                                        <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                                        <option value="3.5">(GMT +3:30) Tehran</option>
+                                        <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+                                        <option value="4.5">(GMT +4:30) Kabul</option>
+                                        <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                                        <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+                                        <option value="5.75">(GMT +5:45) Kathmandu</option>
+                                        <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                                        <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                                        <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                                        <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                                        <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
+                                        <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                                        <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                                        <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+                                    </select>
+                                    <div class="form-buttons">
+                                        <button class="btn btn--yes btn--sm" type="submit">SEND</button>
+                                        <button class="btn btn--sm" type="submit">CANCEL</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div> <!-- /widget-settings -->
+
+            </main> <!-- /wrapper -->
+        </div> <!-- /container -->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="js/app.js"></script>
     </body>
 </html>
