@@ -1,0 +1,53 @@
+// ======================================
+//  Social Widget
+// ======================================
+
+// Social stats widget
+.social-stats {
+  @include flexbox;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+#myWidget4 {
+  @include flexbox;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  @include mq('tablet') {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.social {
+  @include flexbox;
+  border: 1px solid $color-prim;
+  background-color: #FBFBFB;
+  border-radius: $br--default;
+  align-items: center;
+  margin: em(10px) 0;
+  @include mq('tablet') {
+    margin:0;
+    width: 30%;
+  }
+}
+
+.social-shares {
+  font-size: $base__font-size--lg;
+}
+
+.social-icon {
+  background-color: $color-sec;
+  padding: em(8px);
+  margin: em(20px);
+  border-radius:$br--round;
+}
+.social-title {
+  margin:em(5px) 0;
+  color: $color-sec;
+}
+.social-icon .icon-logo {
+  width: $icon-sm;
+  height: $icon-sm;
+  border-radius: 0px;
+}

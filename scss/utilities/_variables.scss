@@ -13,17 +13,16 @@ $font-weight--regular   : 400;
 $font-weight--bold      : 700;
 
 // Text
+$base__font-size--xsm : 10px;
+$base__font-size--sm  : 12px;
+$base__font-size      : 16px;
+$base__font-size--lg  : 24px;
 
-$base__font-size : 16px;
-$base__line      : 24px;
-$letter-space    : 1px;
 
 //Colors
-
 // Descriptive color variables
 $white          : #fff;
 $black          : #000;
-
 
 $ship-cove-dark      : #7477BF;
 $ship-cove-light     : #7377BF;
@@ -38,9 +37,10 @@ $button-colors-default : $ship-cove-light;
 // Functional color variables
 
 $color-prim         : $dusty-gray ;
-$color-sec          : $dusty-gray ;
+$color-sec          : $ship-cove-dark ;
 $color-ter          : $mulled-wine;
 $color-input        : $alabaster;
+$color-alertbox     : salmon;
 //
 $color-link-default : $white;
 

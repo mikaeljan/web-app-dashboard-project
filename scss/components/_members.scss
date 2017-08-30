@@ -1,0 +1,26 @@
+// ======================================
+//  Social Widget
+// ======================================
+
+.members-list .list-item {
+  @include flexbox;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin:em(15px) 0;
+
+}
+.members-text {
+  margin: 0 em(5px);
+}
+.members-list span {
+  margin-left: auto;
+
+}
+.members-text a,
+.members-list span {
+  font-size: $base__font-size--xsm;
+  @include mq("tablet") {
+    font-size: $base__font-size--sm;
+  }
+}

@@ -41,10 +41,13 @@
 
 .nav__list--item {
   flex-grow: 1;
-  padding:em(10px) em(15px);
-  @include mq("tablet") {
+  padding:em(2px) em(2px);
+  align-self:center;
+  @include mq("mobile") {
     @include flex-direction(column);
+    padding:em(10px) em(10px);
     justify-content: flex-start;
+
   }
 }
 .active {
@@ -60,4 +63,13 @@
   align-self: stretch;
   justify-content: space-between;
   align-items: center;
+  @include e("title") {
+    width: 20%;
+  }
+  @include e("search") {
+    width: 60%;
+  }
+
 }
+
+

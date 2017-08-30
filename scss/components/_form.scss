@@ -38,3 +38,7 @@ input[type="search"]:focus {
   @include flexbox;
   justify-content:space-between;
 }
+.valid-alert {
+  color: red;
+  display:block;
+}

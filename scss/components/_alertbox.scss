@@ -1,0 +1,25 @@
+// ======================================
+//  Alert
+// ======================================
+
+.alert {
+  @include flexbox;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+
+  background-color: $color-alertbox;
+  border-radius: $br--default;
+  color: $white;
+}
+.alert-text {
+  display: inline-block;
+  padding: em(10px);
+  margin-left: em(5px);
+}
+.alert-close {
+  cursor: pointer;
+  font-size: em(30px);
+  margin: 0 em(5px) em(5px);
+}
+
