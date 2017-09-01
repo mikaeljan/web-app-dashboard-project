@@ -537,8 +537,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  max-width: 1024px;
+  width: 87%;
+  max-width: 1124px;
   margin: auto; }
   @media (min-width: 768px) {
     .wrapper {
@@ -625,9 +625,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;
   padding: 0.625em 0;
   border-top: 1px solid gainsboro; }
+
+.list-item img {
+  align-self: center; }
 
 .activity-list,
 .members-list {
@@ -637,7 +639,11 @@ p {
   margin: 0 0.3125em; }
 
 .text-side {
-  margin-left: auto; }
+  margin-left: auto;
+  display: none; }
+  @media (min-width: 768px) {
+    .text-side {
+      display: block; } }
 
 .members-text a,
 .members-list .text-side,

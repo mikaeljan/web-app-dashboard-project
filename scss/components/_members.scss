@@ -6,11 +6,13 @@
   @include flexbox;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;
   padding: em(10px) 0;
   border-top: 1px solid gainsboro;
-}
 
+}
+.list-item img {
+  align-self: center;
+}
 .activity-list,
 .members-list{
   border-bottom: 1px solid gainsboro;
@@ -22,6 +24,10 @@
 }
 .text-side {
   margin-left: auto;
+  display: none;
+  @include mq("tablet"){
+    display: block;
+  }
 
 }
 .members-text a,

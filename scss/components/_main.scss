@@ -15,8 +15,8 @@
   @include flex-direction(column);
   justify-content: center;
   align-items:center;
-  width: 85%;
-  max-width:1024px;
+  width: 87%;
+  max-width:1124px;
   margin: auto;
   @include mq("tablet") {
     @include flex-direction(row);

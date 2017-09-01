@@ -12,13 +12,19 @@ USERS = [
         "name": "Bob Smithsonian",
         "date": "10/15/2017",
         "email": "random.chick@gmail.com",
-        "avatar": "images/gary.jpg"
+        "avatar": "images/avatar1.jpg"
     },
     {
         "name": "Mary Ann",
         "date": "10/15/2017",
         "email": "mary.lamb@hotmail.com",
-        "avatar": "images/gary.jpg"
+        "avatar": "images/avatar4.jpg"
+    },
+    {
+        "name": "Daniel Faraday",
+        "date": "10/15/2017",
+        "email": "danay@hotmail.com",
+        "avatar": "images/avatar2.jpg"
     },
 ];
 SOCIAL_SITES = [
@@ -82,11 +88,11 @@ const createListItem = (
                         avatar,
                         date) => {
     $('.members-list').append("<li class='list-item'>" +
-        "<img src='' class='icon-logo'/>" +
+        "<img src="+avatar+" class='icon-logo'/>" +
         "<div class='members-text'><p>"+name+"</p><a href='#'>"+email+"</a></div>" +
         "<span class='text-side'>"+date+"</span>" +
         "</li>");
-    $(".members-list .icon-logo").attr("src", avatar);
+    // $(".members-list .icon-logo").attr("src", avatar);
 };
 
 
@@ -96,12 +102,6 @@ for (let i=0; i < USERS.length; i++) {
         USERS[i].email,
         USERS[i].avatar,
         USERS[i].date);}
-
-
-// ==================================
-// Recent activity widget
-
-
 
 // ==================================
 //Message User widget
@@ -132,7 +132,7 @@ $submitButton.click((e)=>{
 });
 // ==================================
 // Options for charts
-let globalOptions = {
+let basicOptns = {
     responsive: true,
     legend: {
         display: false
@@ -143,56 +143,81 @@ const ctx1= document.getElementById('myWidget1').getContext('2d');
 const lineChart = new Chart(ctx1, {
     // The type of chart we want to create
     type: 'line',
-
-    // The data for our dataset
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: [ '16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
         datasets: [{
-            label: "none",
-            backgroundColor: '#7377BF',
-            borderColor: '#7377BF',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: 'Visits',
+            backgroundColor: 'rgba(77,76,114,.2)',
+            borderColor: '#4D4C72',
+            borderWidth: 2,
+            pointHoverBorderColor: '#4D4C72',
+            pointHoverBackgroundColor: '#4D4C72',
+            pointHoverRadius: 5,
+            data: [ 0, 750, 1250, 980, 1500, 2000, 1500, 1276, 900, 1917, 2100],
         }]
     },
-
-    // Configuration options go here
-    options: globalOptions
+    options: basicOptns,
 });
 
 const ctx2 = document.getElementById('myWidget2').getContext('2d');
 const barChart = new Chart(ctx2, {
     // The type of chart we want to create
     type: 'bar',
-
-    // The data for our dataset
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat", ],
         datasets: [{
-            backgroundColor: '#7377BF',
-            borderColor: '#7377BF',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: '# of visits',
+            data: [ 625, 851,227, 384, 311, 409, 98 ],
+            backgroundColor: 'rgba(77,76,114,.8)',
         }]
     },
-
-    // Configuration options go here
-    options: globalOptions
+    options: basicOptns,
 });
 
 const ctx3 = document.getElementById('myWidget3').getContext('2d');
 const pieChart = new Chart(ctx3, {
     // The type of chart we want to create
-    type: 'pie',
-
-    // The data for our dataset
+    type: 'doughnut',
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    },
+            data: [15, 40, 70],
+            backgroundColor: ['rgba(129,201,143,.8)', 'rgba(116, 119, 191,1)','rgba(250, 128, 114, 1)' ],
+            hoverBackgroundColor: ['rgba(129,201,143,.6)','rgba(116, 119, 191,0.8)','rgba(250, 128, 114, .7)' ]
 
-    // Configuration options go here
-    options: globalOptions
+        }],
+        labels: [
+            'Phones',
+            'Tablets',
+            'Desktop'
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: true,
+            position: 'right'
+
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    display: false,
+                },
+                gridLines: {
+                    display: false,
+                    drawBorder: false
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    display: false,
+                },
+                gridLines: {
+                    display: false,
+                    drawBorder: false
+                }
+            }]
+        }
+    },
 });
