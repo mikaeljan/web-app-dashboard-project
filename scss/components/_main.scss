@@ -2,9 +2,11 @@
 //  Main
 // ======================================
 .container {
+  background-color: darken($alabaster, 10%);
   @include mq("tablet") {
     @include flexbox;
     align-items: stretch;
+
     //@include flex-direction(row);
   }
 }
@@ -23,8 +25,12 @@
     justify-content: space-between;
   }
 }
+
 .widget {
-  padding-top: em(40px);
+  border-radius: $br--default;
+  background-color: $white;
+  padding: em(15px) em(15px) em(20px) em(15px);
+  margin: em(20px) 0;
 }
 .full {
   width: 100%;
@@ -35,9 +41,9 @@
     width: 48%;
   }
 }
-half:nth-of-type(1) {
-  margin-right: em(35px);
-}
+//.half:nth-of-type(1) {
+//  margin-right: em(35px);
+//}
 .round {
   border-radius: $br--round;
 }
@@ -46,11 +52,11 @@ half:nth-of-type(1) {
   font-size: $base__font-size--sm;
   @include flexbox;
   justify-content: space-between;
-  margin:em(15px) 0;
+  align-items: center;
+  margin-bottom:em(15px);
   flex-wrap: wrap;
-}
-.widget-nav {
-  @include flexbox;
-  justify-content:space-between;
+  @include mq("tablet") {
+    font-size: $base__font-size;
+  }
 }
 

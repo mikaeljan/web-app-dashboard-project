@@ -51,7 +51,10 @@
   }
 }
 .active {
-  background-color: $button-colors-active;
+  background-color: darken($alabaster, 10%);
+  @include e('chart') {
+    background-color: $button-colors-active;
+  }
 }
 .nav__list--item a {
   display:block;
@@ -72,4 +75,8 @@
 
 }
 
+.widget-nav {
+  @include flexbox;
+  justify-content:space-between;
+}
 

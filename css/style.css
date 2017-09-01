@@ -436,7 +436,6 @@ body {
 
 h1,
 h2,
-h3,
 p {
   margin: 0; }
 
@@ -504,7 +503,9 @@ p {
       justify-content: flex-start; } }
 
 .active {
-  background-color: #81C98F; }
+  background-color: #e2e2e2; }
+  .active__chart {
+    background-color: #81C98F; }
 
 .nav__list--item a {
   display: block;
@@ -520,10 +521,16 @@ p {
   .tab__search {
     width: 60%; }
 
-@media (min-width: 768px) {
-  .container {
-    display: flex;
-    align-items: stretch; } }
+.widget-nav {
+  display: flex;
+  justify-content: space-between; }
+
+.container {
+  background-color: #e2e2e2; }
+  @media (min-width: 768px) {
+    .container {
+      display: flex;
+      align-items: stretch; } }
 
 .wrapper {
   display: flex;
@@ -541,7 +548,10 @@ p {
       justify-content: space-between; } }
 
 .widget {
-  padding-top: 2.5em; }
+  border-radius: 0.4em;
+  background-color: #fff;
+  padding: 0.9375em 0.9375em 1.25em 0.9375em;
+  margin: 1.25em 0; }
 
 .full {
   width: 100%; }
@@ -552,9 +562,6 @@ p {
     .half {
       width: 48%; } }
 
-half:nth-of-type(1) {
-  margin-right: 2.1875em; }
-
 .round {
   border-radius: 50%; }
 
@@ -562,12 +569,12 @@ half:nth-of-type(1) {
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  margin: 0.9375em 0;
+  align-items: center;
+  margin-bottom: 0.9375em;
   flex-wrap: wrap; }
-
-.widget-nav {
-  display: flex;
-  justify-content: space-between; }
+  @media (min-width: 768px) {
+    .widget-title {
+      font-size: 16px; } }
 
 .social-stats {
   display: flex;
@@ -614,25 +621,32 @@ half:nth-of-type(1) {
   height: 35px;
   border-radius: 0px; }
 
-.members-list .list-item {
+.list-item {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 0.9375em 0; }
+  padding: 0.625em 0;
+  border-top: 1px solid gainsboro; }
+
+.activity-list,
+.members-list {
+  border-bottom: 1px solid gainsboro; }
 
 .members-text {
   margin: 0 0.3125em; }
 
-.members-list span {
+.text-side {
   margin-left: auto; }
 
 .members-text a,
-.members-list span {
+.members-list .text-side,
+.activity-list span {
   font-size: 10px; }
   @media (min-width: 768px) {
     .members-text a,
-    .members-list span {
+    .members-list .text-side,
+    .activity-list span {
       font-size: 12px; } }
 
 .alert {

@@ -47,9 +47,9 @@ alert.addEventListener("click", (e)=> {
 });
 // Social stats widget
 for (let i =0; i < SOCIAL_SITES.length; i++) {
-    const $divSocial = $('<div class="social"> </div>');
+    const $divSocial = $('<div class="social"></div>');
     const $divImage = $('<div class="social-icon"></div>');
-    const $divText = $('<div class="social-text"> </div>');
+    const $divText = $('<div class="social-text"></div>');
     //Append main social div into widget container
     $socWidget.append($divSocial);
     //Append div for image to outer social div
@@ -75,7 +75,7 @@ for (let i =0; i < SOCIAL_SITES.length; i++) {
 // Members widget
 const memberHTML = "<ul class='members-list'></ul>";
 $('#myWidget5').append(memberHTML);
-$('#myWidget6').append(memberHTML);
+// $('#myWidget6').append(memberHTML);
 const createListItem = (
                         name,
                         email,
@@ -84,10 +84,9 @@ const createListItem = (
     $('.members-list').append("<li class='list-item'>" +
         "<img src='' class='icon-logo'/>" +
         "<div class='members-text'><p>"+name+"</p><a href='#'>"+email+"</a></div>" +
-        "<span>"+date+"</span>" +
+        "<span class='text-side'>"+date+"</span>" +
         "</li>");
     $(".members-list .icon-logo").attr("src", avatar);
- // $(".members-list .members-text");
 };
 
 
