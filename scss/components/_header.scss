@@ -17,6 +17,7 @@
 }
 
 .header-main a {
+  position: relative;
   color: $white;
   text-decoration: none;
 }
@@ -25,3 +26,22 @@
   margin-left: em(5px);
 }
 
+.notification {
+  color: $black;
+  display: none;
+  opacity: 0;
+  width: em(20px);
+  height: em(20px);
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  background-color: $color-alertbox;
+  z-index: 2000;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}

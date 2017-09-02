@@ -33,6 +33,12 @@
 .members-text a,
 .members-list .text-side,
 .activity-list span{
+  font-size: $base__font-size--sm;
+  @include mq("tablet") {
+    font-size: $base__font-size;
+  }
+}
+.activity-list .time {
   font-size: $base__font-size--xsm;
   @include mq("tablet") {
     font-size: $base__font-size--sm;
