@@ -1,3 +1,9 @@
+# Dashboard Web App
+
+JS libraries used:
+1. [Chart.js](http://www.chartjs.org/)
+2. [SweetAlert](https://limonte.github.io/sweetalert2/)
+
 ## Live [demo](https://mikaeljan.github.io/web-app-dashboard-project/)
 
 ## To-Do:
