@@ -8,6 +8,7 @@
           initial-scale=1
            maximum-scale=5,
            user-scalable=0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.8/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -179,12 +180,12 @@
                             <div class="widget-title">
                                 <h3>SETTINGS</h3>
                             </div>
-                            <form class="">
+                            <form class="form-settings">
                                 <fieldset>
                                     <div class="switch-row">
                                         <label>Send Email Notifications </label>
                                         <label class="switch">
-                                            <input type="checkbox">
+                                            <input class="emailSettings" type="checkbox">
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
@@ -192,12 +193,12 @@
                                     <div class="switch-row">
                                         <label>Switch Profile to Public</label>
                                         <label class="switch">
-                                            <input type="checkbox">
+                                            <input class="privacySettings" type="checkbox">
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
 
-                                    <select class="timezone">
+                                    <select class="timezoneSettings">
                                         <option value="" disable="" selected="">Select Timezone</option>
                                         <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
                                         <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
@@ -233,7 +234,7 @@
                                     </select>
                                     <div class="form-buttons">
                                         <button class="btn btn--active btn--save btn--sm" type="submit">SAVE</button>
-                                        <button class="btn btn--sm" type="submit">CANCEL</button>
+                                        <button class="btn btn--sm btn--cancel">CANCEL</button>
                                     </div>
                                 </fieldset>
                             </form>
@@ -249,8 +250,9 @@
                 src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/charts.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
     </body>
 </html>
