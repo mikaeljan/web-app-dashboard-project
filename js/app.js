@@ -148,7 +148,6 @@ function supportsLocalStorage() {
     //Upon submitting form data is saved to localStorage
 formSettings.addEventListener("submit", function(e) {
     e.preventDefault();
-    console.log("Submitting...");
     const email = $('.emailSettings').prop('checked');
     const privacy = $('.privacySettings').prop('checked');
     const timezone = $('.timezoneSettings').val();
@@ -186,7 +185,6 @@ function removeSettings() {
 
 cancelBtn.addEventListener("click", (e)=> {
     e.preventDefault();
-    console.log("Clearing...");
     removeSettings();
     // sweet alert pop up
     swal({
@@ -204,7 +202,6 @@ window.onload = function() {
         const emailState = localStorage.getItem('emailSettings');
         const privacyState = localStorage.getItem('privacySettings');
         const timezoneState = localStorage.getItem('timezoneSettings');
-        console.log(timezoneState);
         $('.emailSettings').prop('checked', JSON.parse(emailState));
         $('.privacySettings').prop('checked', JSON.parse(privacyState));
         $('.timezoneSettings').val(timezoneState);
