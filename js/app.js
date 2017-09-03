@@ -189,7 +189,7 @@ cancelBtn.addEventListener("click", (e)=> {
     // sweet alert pop up
     swal({
         title: '',
-        text: 'Your settings have been saved',
+        text: 'Your settings have been reset',
         type: 'info',
         confirmButtonColor: '#7377BF'
     })
