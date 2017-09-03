@@ -8,3 +8,4 @@ This could be a pop-up window or dropdown menu.
 3. Add an "autocomplete" feature for the "Search for User" box, listing names that match the search term.
 4. Use local storage to save the settings.
 When page is reloaded the settings are remembered.
+5. Add sweetAlert plugin functionality.

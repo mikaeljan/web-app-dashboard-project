@@ -134,14 +134,79 @@ $submitButton.click((e)=>{
 
 
 // local storage for Settings widget
-// const $saveBtn = $('.btn--save');
-// $saveBtn.click(function(e) {
-//     e.preventDefault();
-//     let email = $('#emailNotifications').prop('checked');
-//     let privacy = $('#privacySettings').prop('checked');
-//     let timezone = $('#timezone').val();
-//
-//     localStorage.setItem('emailSettings', email);
-//     localStorage.setItem('privacySettings', privacy);
-//     localStorage.setItem('userTimezone', timezone);
-// };
+const formSettings = document.querySelector(".form-settings");
+    //Checks if website supports localStorage
+function supportsLocalStorage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== 'null';
+    } catch(e) {
+        return false;
+    }
+}
+
+
+    //Upon submitting form data is saved to localStorage
+formSettings.addEventListener("submit", function(e) {
+    e.preventDefault();
+    console.log("Submitting...");
+    const email = $('.emailSettings').prop('checked');
+    const privacy = $('.privacySettings').prop('checked');
+    const timezone = $('.timezoneSettings').val();
+
+    localStorage.setItem('emailSettings', email);
+    localStorage.setItem('privacySettings', privacy);
+    localStorage.setItem('timezoneSettings', timezone);
+    // sweet alert pop up
+    swal({
+        title: '',
+        text: 'Your settings have been saved',
+        type: 'success',
+        confirmButtonColor: '#7377BF'
+    })
+    // To suppress any errors
+        .catch(swal.noop);
+});
+    // Load page with localSettings set up
+
+
+// Clear localSettings upon clicking cancel button
+const cancelBtn = document.querySelector(".btn--cancel");
+
+function removeSettings() {
+    localStorage.removeItem('emailSettings');
+    localStorage.removeItem("privacySettings");
+    localStorage.removeItem("timezoneSettings");
+
+    $('.emailSettings').prop('checked', false);
+    $('.privacySettings').prop('checked', false);
+    $('.timezoneSettings').val("");
+
+}
+
+
+cancelBtn.addEventListener("click", (e)=> {
+    e.preventDefault();
+    console.log("Clearing...");
+    removeSettings();
+    // sweet alert pop up
+    swal({
+        title: '',
+        text: 'Your settings have been saved',
+        type: 'info',
+        confirmButtonColor: '#7377BF'
+    })
+        // To suppress any errors
+        .catch(swal.noop);
+});
+// After page loads the form will start up with stored settings according to localStorage data
+window.onload = function() {
+    if (supportsLocalStorage) {
+        const emailState = localStorage.getItem('emailSettings');
+        const privacyState = localStorage.getItem('privacySettings');
+        const timezoneState = localStorage.getItem('timezoneSettings');
+        console.log(timezoneState);
+        $('.emailSettings').prop('checked', JSON.parse(emailState));
+        $('.privacySettings').prop('checked', JSON.parse(privacyState));
+        $('.timezoneSettings').val(timezoneState);
+    }
+};
