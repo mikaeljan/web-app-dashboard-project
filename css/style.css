@@ -527,7 +527,7 @@ p {
     background-color: #81C98F; }
 
 .nav__list--item a {
-  display: block;
+  display: inline-block;
   padding: 0.3125em; }
 
 .tab {
