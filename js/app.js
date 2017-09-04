@@ -56,14 +56,14 @@ alert.addEventListener("click", (e)=> {
     }
 });
 
-
+mainHeader.addEventListener('click', toggleVisibility, false);
 // Notificatioin section
 function toggleVisibility(e) {
     if (e.target === notificationIcon) {
         notificationsContent.classList.toggle('show');
     }
 }
-mainHeader.addEventListener('click', toggleVisibility, false);
+
 
 
 // Social stats widget
