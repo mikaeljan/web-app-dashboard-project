@@ -1,6 +1,9 @@
 const alert = document.querySelector('.alert');
 const $socWidget = $("#myWidget4");
 const $submitButton = $("#myWidget7 .btn");
+const notificationIcon = document.querySelector('.icon-notification');
+const notificationsContent = document.querySelector('.notification-content');
+const mainHeader = document.querySelector(".header-main");
 
 USERS = [
     {
@@ -54,21 +57,15 @@ alert.addEventListener("click", (e)=> {
 });
 
 
-// ====================
-const notificationIcon = document.querySelector('.icon-notification');
-const notificationsContent = document.querySelector('.notification-content');
-const mainHeader = document.querySelector(".header-main");
-mainHeader.addEventListener('click', toggleVisibility, false);
-
-
+// Notificatioin section
 function toggleVisibility(e) {
     if (e.target === notificationIcon) {
         notificationsContent.classList.toggle('show');
     }
 }
+mainHeader.addEventListener('click', toggleVisibility, false);
 
 
-// ====================
 // Social stats widget
 for (let i =0; i < SOCIAL_SITES.length; i++) {
     const $divSocial = $('<div class="social"></div>');
