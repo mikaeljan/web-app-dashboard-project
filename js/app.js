@@ -52,6 +52,22 @@ alert.addEventListener("click", (e)=> {
         e.target.parentNode.remove();
     }
 });
+
+
+// ====================
+const notificationIcon = document.querySelector('.icon-notification');
+const notificationsContent = document.querySelector('.notification-content');
+document.querySelector(".header-main").addEventListener('click', toggleVisibility, false);
+
+
+function toggleVisibility(e) {
+    if (e.target === notificationIcon) {
+        notificationsContent.classList.toggle('show');
+    }
+}
+
+
+// ====================
 // Social stats widget
 for (let i =0; i < SOCIAL_SITES.length; i++) {
     const $divSocial = $('<div class="social"></div>');
