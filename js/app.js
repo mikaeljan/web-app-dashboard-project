@@ -57,7 +57,8 @@ alert.addEventListener("click", (e)=> {
 // ====================
 const notificationIcon = document.querySelector('.icon-notification');
 const notificationsContent = document.querySelector('.notification-content');
-document.querySelector(".header-main").addEventListener('click', toggleVisibility, false);
+const mainHeader = document.querySelector(".header-main");
+mainHeader.addEventListener('click', toggleVisibility, false);
 
 
 function toggleVisibility(e) {
