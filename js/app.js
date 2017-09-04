@@ -1,6 +1,9 @@
 const alert = document.querySelector('.alert');
 const $socWidget = $("#myWidget4");
 const $submitButton = $("#myWidget7 .btn");
+const notificationIcon = document.querySelector('.icon-notification');
+const notificationsContent = document.querySelector('.notification-content');
+const mainHeader = document.querySelector(".header-main");
 
 USERS = [
     {
@@ -46,7 +49,7 @@ SOCIAL_SITES = [
     },
 ];
 //Events
-    // Event for removing alert box upon clicking X
+// Event for removing alert box upon clicking X
 alert.addEventListener("click", (e)=> {
     if (e.target.className === "alert-close") {
         e.target.parentNode.remove();
@@ -54,21 +57,15 @@ alert.addEventListener("click", (e)=> {
 });
 
 
-// ====================
-const notificationIcon = document.querySelector('.icon-notification');
-const notificationsContent = document.querySelector('.notification-content');
-const mainHeader = document.querySelector(".header-main");
-mainHeader.addEventListener('click', toggleVisibility, false);
-
-
+// Notificatioin section
 function toggleVisibility(e) {
     if (e.target === notificationIcon) {
         notificationsContent.classList.toggle('show');
     }
 }
+mainHeader.addEventListener('click', toggleVisibility, false);
 
 
-// ====================
 // Social stats widget
 for (let i =0; i < SOCIAL_SITES.length; i++) {
     const $divSocial = $('<div class="social"></div>');
@@ -101,10 +98,10 @@ const memberHTML = "<ul class='members-list'></ul>";
 $('#myWidget5').append(memberHTML);
 // $('#myWidget6').append(memberHTML);
 const createListItem = (
-                        name,
-                        email,
-                        avatar,
-                        date) => {
+    name,
+    email,
+    avatar,
+    date) => {
     $('.members-list').append("<li class='list-item'>" +
         "<img src="+avatar+" class='icon-logo'/>" +
         "<div class='members-text'><p>"+name+"</p><a href='#'>"+email+"</a></div>" +
@@ -124,20 +121,20 @@ for (let i=0; i < USERS.length; i++) {
 // ==================================
 //Message User widget
 const checkValid =()=>{
-  const nameInput = $("#myWidget7 .user-name").val();
-  const textareaInput =$("#myWidget7 .user-message").val();
-  const validText = "Please make sure you entered your Name and your Message.";
-  const $alertMessage = $("<span class='valid-alert'>"+validText+"</span>");
+    const nameInput = $("#myWidget7 .user-name").val();
+    const textareaInput =$("#myWidget7 .user-message").val();
+    const validText = "Please make sure you entered your Name and your Message.";
+    const $alertMessage = $("<span class='valid-alert'>"+validText+"</span>");
 
-  $(".valid-alert").remove();
+    $(".valid-alert").remove();
     if (nameInput === null || nameInput === "") {
         $alertMessage.insertBefore($submitButton);
         return false;
-  } if(textareaInput === null || textareaInput === "") {
+    } if(textareaInput === null || textareaInput === "") {
         $alertMessage.insertBefore($submitButton);
         return false;
-  }
-  //If none of the conditions were true then function automatically returns true and ends
+    }
+    //If none of the conditions were true then function automatically returns true and ends
     return true;
 };
 
@@ -152,7 +149,7 @@ $submitButton.click((e)=>{
 
 // local storage for Settings widget
 const formSettings = document.querySelector(".form-settings");
-    //Checks if website supports localStorage
+//Checks if website supports localStorage
 function supportsLocalStorage() {
     try {
         return 'localStorage' in window && window['localStorage'] !== 'null';
@@ -162,7 +159,7 @@ function supportsLocalStorage() {
 }
 
 
-    //Upon submitting form data is saved to localStorage
+//Upon submitting form data is saved to localStorage
 formSettings.addEventListener("submit", function(e) {
     e.preventDefault();
     const email = $('.emailSettings').prop('checked');
@@ -182,7 +179,7 @@ formSettings.addEventListener("submit", function(e) {
     // To suppress any errors
         .catch(swal.noop);
 });
-    // Load page with localSettings set up
+// Load page with localSettings set up
 
 
 // Clear localSettings upon clicking cancel button
@@ -210,7 +207,7 @@ cancelBtn.addEventListener("click", (e)=> {
         type: 'info',
         confirmButtonColor: '#7377BF'
     })
-        // To suppress any errors
+    // To suppress any errors
         .catch(swal.noop);
 });
 // After page loads the form will start up with stored settings according to localStorage data
